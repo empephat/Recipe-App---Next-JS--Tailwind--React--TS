@@ -1,0 +1,45 @@
+// prisma/schema.prisma
+datasource db {
+  provider  = "postgresql"
+  url  	    = env("DATABASE_URL")
+  // uncomment next line if you use Prisma <5.10
+  // directUrl = env("DATABASE_URL_UNPOOLED")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Recipe {
+  id           String       @id @default(cuid())
+  slug         String       @unique
+  title        String
+  description  String
+  image        String
+  prepTime     Int
+  cookTime     Int
+  servings     Int
+  rating       Float
+  reviews      Int
+  ingredients  Ingredient[]
+  instructions Instruction[]
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+}
+
+model Ingredient {
+  id       String @id @default(cuid())
+  amount   Float
+  unit     String
+  name     String
+  recipe   Recipe @relation(fields: [recipeId], references: [id])
+  recipeId String
+}
+
+model Instruction {
+  id       String @id @default(cuid())
+  step     Int
+  text     String
+  recipe   Recipe @relation(fields: [recipeId], references: [id])
+  recipeId String
+}
