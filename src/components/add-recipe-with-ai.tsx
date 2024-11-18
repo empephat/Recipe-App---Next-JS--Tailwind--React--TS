@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Loading } from "./loading";
 import { z } from "zod";
 import { experimental_useObject as useObject } from "ai/react";
-import { Input } from "@/components/input";
+import { Input } from "@/components/ui/input";
 import { RecipeSchema } from "../schema/recipeSchema";
 import { RecipeCardWithAI } from "./recipe-card-with-ai";
 
