@@ -1,6 +1,6 @@
 "use client";
-import { Search } from "lucide-react";
 import RecipeCard from "@/components/recipe-card";
+import SearchBox from "@/components/search";
 
 function SearchSection() {
   return (
@@ -13,17 +13,7 @@ function SearchSection() {
           For 20 years, we have been dedicated to providing our customers with
           the best gastronomic experiences.
         </p>
-        <div className="max-w-2xl mx-auto relative">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="w-full py-2 px-4 pr-10 rounded-full border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-400"
-          />
-          <Search
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-green-400"
-            size={20}
-          />
-        </div>
+        <SearchBox />
       </div>
     </div>
   );
