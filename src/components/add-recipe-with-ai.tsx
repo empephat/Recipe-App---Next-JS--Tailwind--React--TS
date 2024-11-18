@@ -78,7 +78,7 @@ export default function AddRecipeFormWithAI() {
         <button
           onClick={handleSubmit}
           disabled={isLoading}
-          className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition-colors"
+          className="bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-green-600 transition-colors"
         >
           Generate Recipe
         </button>
